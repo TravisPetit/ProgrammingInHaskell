@@ -83,7 +83,7 @@ instance Foldable Tree where
   foldMap f Leaf = mempty
   foldMap f (Node l x r) = (f x) <> (foldMap f l) <> (foldMap f r)
 
--- Exercise 4
+-- Exercise 5
 
 filterF :: Foldable t => (a -> Bool) -> t a -> [a]
 filterF p tx = foldMap (\x -> if p x then [x] else []) tx
